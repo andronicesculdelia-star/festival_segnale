@@ -214,13 +214,251 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-button:focus-visible,
-iframe:focus-visible {
-  outline: 3px solid var(--colore-testo);
-  outline-offset: 3px;
+
+/* Info e luoghi: componenti aggiunti al sito esistente. */
+button {
+  padding: 0.65rem 0.5rem;
+  border: 2px solid var(--colore-primario);
+  border-radius: 0.5rem;
+  background: var(--colore-primario);
+  color: #ffffff;
+  font-family: var(--font-testo);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+button:hover {
+  background: var(--colore-primario-scuro);
+}
+
+button:focus {
+  outline: 3px solid var(--colore-testo);
+}
+
+.venue-gallery {
+  max-width: 54rem;
+}
+
+.venue-swiper {
+  width: 100%;
+}
+
+.venue-slide {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #b7c0b7;
+  border-radius: 0.75rem;
+  background: #ffffff;
+}
+
+.venue-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.venue-slide figcaption {
+  padding: 1.25rem;
+}
+
+.gallery-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.gallery-count {
+  margin: 0.75rem 0 0;
+  text-align: center;
+}
+
+@media (max-width: 319px) {
+  .gallery-label {
+    font-size: 0;
+  }
+}
+
+.map-container {
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border: 1px solid #b7c0b7;
+  border-radius: 0.75rem;
+  background: #ffffff;
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 28rem;
+  border: 0;
+}
+
+.venue-addresses {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.venue-address {
+  padding: 1.25rem;
+  border: 1px solid #b7c0b7;
+  border-radius: 0.75rem;
+}
+
+.teaching-note {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .venue-addresses {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Stile ispirato alla moodboard */
+:root {
+  --colore-primario: #ff2f92;
+  --colore-primario-scuro: #d91c74;
+  --colore-sfondo: #080808;
+  --colore-testo: #ffffff;
+  --font-testo: "Archivo", Arial, sans-serif;
+  --font-titoli: "Anton", Impact, sans-serif;
+
+  --colore-rosa: #f4b6b8;
+  --colore-azzurro: #62c9f2;
+  --colore-bordo: #45414a;
+}
+
+body {
+  background: var(--colore-sfondo);
+  color: var(--colore-testo);
+  font-family: var(--font-testo);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--colore-rosa);
+  font-family: var(--font-titoli);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: var(--colore-azzurro);
+}
+
+a:hover {
+  color: var(--colore-rosa);
+}
+
+a:focus,
+button:focus {
+  outline-color: var(--colore-azzurro);
+}
+
+.site-header {
+  border-bottom-color: var(--colore-primario);
+}
+
+.brand {
+  color: var(--colore-rosa);
+  font-family: var(--font-titoli);
+  font-weight: 400;
+}
+
+.brand span {
+  color: var(--colore-azzurro);
+  font-family: var(--font-testo);
+}
+
+nav a {
+  color: var(--colore-testo);
+}
+
+nav a:hover {
   color: var(--colore-primario);
+}
+
+.eyebrow,
+.event-meta,
+.event-place,
+.site-footer {
+  color: var(--colore-azzurro);
+}
+
+.button-link,
+button {
+  border-color: var(--colore-primario);
+  background: var(--colore-primario);
+  color: #ffffff;
+}
+
+.button-link:hover,
+button:hover {
+  border-color: var(--colore-primario-scuro);
+  background: var(--colore-primario-scuro);
+  color: #ffffff;
+}
+
+.event-card,
+.venue-slide,
+.venue-address,
+.map-container {
+  border-color: var(--colore-bordo);
+  background: #171519;
+  color: var(--colore-testo);
+}
+
+.site-footer {
+  border-top-color: var(--colore-bordo);
+}
+
+.skip-link {
+  background: #ffffff;
+  color: #080808;
+}
+/* Menu: in colonna sugli schermi piccoli */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+nav a {
+  margin-right: 0;
+  padding: 0.25rem 0;
+}
+
+/* Da 600 px: collegamenti in riga */
+@media (min-width: 600px) {
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+  }
+}
+/* Intestazione sempre disponibile durante lo scorrimento */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--colore-sfondo);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Menu compatto in colonna sui telefoni */
+@media (max-width: 599px) {
+  .site-header {
+    padding: 0.75rem 0;
+  }
+
+  .site-header nav {
+    margin-top: 0.5rem;
+    gap: 0;
+  }
 }
