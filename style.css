@@ -462,3 +462,110 @@ nav a {
     gap: 0;
   }
 }
+/* Nuova palette */
+:root {
+  --colore-sfondo: #EAE3D6;
+  --colore-testo: #1E2924;
+  --colore-primario: #D55428;
+  --colore-primario-scuro: #aa3e1d;
+  --colore-rosa: #F5C855;
+  --colore-azzurro: #D55428;
+  --colore-bordo: #c9bfae;
+}
+
+body {
+  background: #EAE3D6;
+  color: #1E2924;
+}
+
+.site-header {
+  background: #EAE3D6;
+  border-bottom-color: #D55428;
+}
+
+.brand,
+h1,
+h2,
+h3 {
+  color: #D55428;
+}
+
+.brand span,
+.eyebrow,
+.event-meta,
+.event-place,
+.site-footer {
+  color: #1E2924;
+}
+
+nav a {
+  color: #1E2924;
+}
+
+nav a:hover,
+a:hover {
+  color: #D55428;
+}
+
+a {
+  color: #D55428;
+}
+
+.button-link,
+button {
+  border-color: #D55428;
+  background: #D55428;
+  color: #ffffff;
+}
+
+.button-link:hover,
+button:hover {
+  border-color: #aa3e1d;
+  background: #aa3e1d;
+  color: #ffffff;
+}
+
+.event-card,
+.venue-slide,
+.venue-address,
+.map-container {
+  border-color: #c9bfae;
+  background: #f5f0e7;
+  color: #1E2924;
+}
+
+.site-footer {
+  border-top-color: #c9bfae;
+}
+
+.skip-link {
+  background: #F5C855;
+  color: #1E2924;
+}
+
+.gallery-count {
+  color: #1E2924;
+}
+.weather-box {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--colore-primario);
+  border-radius: 0.75rem;
+  background: #F5C855;
+  color: #1E2924;
+}
+
+.weather-box h2,
+.weather-box p {
+  color: #1E2924;
+}
+
+.weather-box h2 {
+  margin-top: 0;
+}
+
+.weather-note,
+.weather-credit {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
